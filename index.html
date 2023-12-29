@@ -8,14 +8,15 @@
 <body>
     hola, no soy vue
     <script src="https://unpkg.com/vue@next"></script>
-    <div id="app">{{text}}</div>
+    <div id="app"></div>
     <script>
         const vm = Vue.createApp({
             data(){
                 return{
-                    text: "Hola, esto sí es vue"
+                    text: "<strong>Hola, esto sí es vue</strong>"
                 };
-            }
+            },
+            template:`<div v-once v-text="text"></div><div v-html="text"></div>`
             
         }).mount("#app");
         console.log(vm);
