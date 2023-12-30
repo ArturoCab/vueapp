@@ -8,15 +8,17 @@
 <body>
     hola, no soy vue
     <script src="https://unpkg.com/vue@next"></script>
-    <div id="app"></div>
+    <div id="app">
+        <!-- <img v-bind:src="img" v-bind:alt="img"/> -->
+    </div>
     <script>
         const vm = Vue.createApp({
             data(){
                 return{
-                    text: "<strong>Hola, esto sí es vue</strong>"
+                    img:'https://serebii.net/cafemix/miraidonevent.jpg'
                 };
             },
-            template:`<div v-once v-text="text"></div><div v-html="text"></div>`
+            template:`<img v-bind:src="img" v-bind:alt="img"/>`
             
         }).mount("#app");
         console.log(vm);
